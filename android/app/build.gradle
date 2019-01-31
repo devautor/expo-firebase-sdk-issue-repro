@@ -233,7 +233,8 @@ dependencies {
   api 'host.exp.exponent:expo-sms:2.0.0'
   api 'host.exp.exponent:expo-background-fetch:1.0.0'
 
-  
+  api project(':expo-firebase-app')
+  api project(':expo-core')
 }
 
 // This has to be down here for some reason
