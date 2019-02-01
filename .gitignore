@@ -7,3 +7,5 @@ npm-debug.*
 *.mobileprovision
 
 .DS_Store
+
+android/app/src/main/assets/shell-app.bundle
