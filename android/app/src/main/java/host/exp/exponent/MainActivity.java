@@ -32,9 +32,7 @@ public class MainActivity extends DetachActivity {
     @Override
     public List<Package> expoPackages() {
         // Here you can add your own packages.
-        return Arrays.<Package>asList(
-                new FirebaseAppPackage() // Include this.
-        );
+        return ((MainApplication) getApplication()).getExpoPackages();
     }
 
     @Override

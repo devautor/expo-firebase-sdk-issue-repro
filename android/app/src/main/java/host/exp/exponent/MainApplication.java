@@ -18,6 +18,7 @@ import expo.modules.constants.ConstantsPackage;
 import expo.modules.contacts.ContactsPackage;
 import expo.modules.facedetector.FaceDetectorPackage;
 import expo.modules.filesystem.FileSystemPackage;
+import expo.modules.firebase.app.FirebaseAppPackage;
 import expo.modules.font.FontLoaderPackage;
 import expo.modules.gl.GLPackage;
 import expo.modules.google.signin.GoogleSignInPackage;
@@ -37,62 +38,63 @@ import expolib_v1.okhttp3.OkHttpClient;
 
 public class MainApplication extends ExpoApplication implements AppLoaderPackagesProviderInterface<ReactPackage> {
 
-  @Override
-  public boolean isDebug() {
-    return BuildConfig.DEBUG;
-  }
+    @Override
+    public boolean isDebug() {
+        return BuildConfig.DEBUG;
+    }
 
-  // Needed for `react-native link`
-  public List<ReactPackage> getPackages() {
-    return Arrays.<ReactPackage>asList(
-        // Add your own packages here!
-        // TODO: add native modules!
+    // Needed for `react-native link`
+    public List<ReactPackage> getPackages() {
+        return Arrays.<ReactPackage>asList(
+                // Add your own packages here!
+                // TODO: add native modules!
 
-        // Needed for `react-native link`
-        // new MainReactPackage()
-    );
-  }
+                // Needed for `react-native link`
+                // new MainReactPackage()
+        );
+    }
 
-  public List<Package> getExpoPackages() {
-    return Arrays.<Package>asList(
-        new CameraPackage(),
-        new ConstantsPackage(),
-        new SensorsPackage(),
-        new FileSystemPackage(),
-        new FaceDetectorPackage(),
-        new GLPackage(),
-        new GoogleSignInPackage(),
-        new PermissionsPackage(),
-        new SMSPackage(),
-        new PrintPackage(),
-        new ConstantsPackage(),
-        new MediaLibraryPackage(),
-        new SegmentPackage(),
-        new FontLoaderPackage(),
-        new LocationPackage(),
-        new ContactsPackage(),
-        new BarCodeScannerPackage(),
-        new AdMobPackage(),
-        new LocalAuthenticationPackage(),
-        new LocalizationPackage(),
-        new AppAuthPackage(),
-        new TaskManagerPackage(),
-        new BackgroundFetchPackage()
-    );
-  }
+    public List<Package> getExpoPackages() {
+        return Arrays.<Package>asList(
+                new CameraPackage(),
+                new ConstantsPackage(),
+                new SensorsPackage(),
+                new FileSystemPackage(),
+                new FaceDetectorPackage(),
+                new GLPackage(),
+                new GoogleSignInPackage(),
+                new PermissionsPackage(),
+                new SMSPackage(),
+                new PrintPackage(),
+                new ConstantsPackage(),
+                new MediaLibraryPackage(),
+                new SegmentPackage(),
+                new FontLoaderPackage(),
+                new LocationPackage(),
+                new ContactsPackage(),
+                new BarCodeScannerPackage(),
+                new AdMobPackage(),
+                new LocalAuthenticationPackage(),
+                new LocalizationPackage(),
+                new AppAuthPackage(),
+                new TaskManagerPackage(),
+                new BackgroundFetchPackage(),
+                new FirebaseAppPackage()
+        );
+    }
 
-  @Override
-  public String gcmSenderId() {
-    return getString(R.string.gcm_defaultSenderId);
-  }
+    @Override
+    public String gcmSenderId() {
+        return getString(R.string.gcm_defaultSenderId);
+    }
 
-  @Override
-  public boolean shouldUseInternetKernel() {
-    return BuildVariantConstants.USE_INTERNET_KERNEL;
-  }
+    @Override
+    public boolean shouldUseInternetKernel() {
+        return BuildVariantConstants.USE_INTERNET_KERNEL;
+    }
 
-  public static OkHttpClient.Builder okHttpClientBuilder(OkHttpClient.Builder builder) {
-    // Customize/override OkHttp client here
-    return builder;
-  }
+    public static OkHttpClient.Builder okHttpClientBuilder(OkHttpClient.Builder builder) {
+        // Customize/override OkHttp client here
+        return builder;
+    }
 }
