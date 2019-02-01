@@ -35,6 +35,7 @@ import expolib_v1.okhttp3.OkHttpClient;
 
 // Needed for `react-native link`
 // import com.facebook.react.ReactApplication;
+import com.dooboolab.RNIap.RNIapPackage;
 
 public class MainApplication extends ExpoApplication implements AppLoaderPackagesProviderInterface<ReactPackage> {
 
@@ -46,11 +47,7 @@ public class MainApplication extends ExpoApplication implements AppLoaderPackage
     // Needed for `react-native link`
     public List<ReactPackage> getPackages() {
         return Arrays.<ReactPackage>asList(
-                // Add your own packages here!
-                // TODO: add native modules!
-
-                // Needed for `react-native link`
-                // new MainReactPackage()
+            new RNIapPackage()
         );
     }
 

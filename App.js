@@ -1,7 +1,21 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
+import { NativeModules } from 'react-native';
+const { RNIapModule } = NativeModules;
+function hasIAP() {
+  return !!NativeModules.RNIapModule;
+}
+
+
 export default class App extends React.Component {
+  componentDidMount () {
+    if (hasIAP()) {
+      console.log('fuck yeaaa')
+    } else {
+      console.log('fuck noooo')
+    }
+  }
   render() {
     return (
       <View style={styles.container}>
